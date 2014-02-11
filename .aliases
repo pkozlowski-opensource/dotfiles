@@ -1,0 +1,30 @@
+# bash aliases
+alias ls="ls -laG"
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# git aliases
+alias ga="git add"
+alias gaa="git add ."
+alias gbr="git branch"
+alias gcp="git cherry-pick"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcom="git commit"
+alias gcoma="git commit -a"
+alias gfiles="git diff-tree --no-commit-id --name-only -r"
+alias glog="git log"
+alias glog1="git log --oneline"
+alias gma="git checkout master"
+alias gpush="git push"
+alias gpull="git pull"
+alias gr="git reset"
+alias grh="gr --hard"
+alias grhh="grh HEAD"
+alias gs="git status"
