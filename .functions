@@ -1,0 +1,10 @@
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$@"
+}
+
+# Clone a git repo and enter into a cloned folder
+function gclone() {
+	repowithgit=${1##*/}
+	git clone $1 && cd ${repowithgit%.git}
+}
