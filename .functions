@@ -8,3 +8,12 @@ function gclone() {
 	repowithgit=${1##*/}
 	git clone $1 && cd ${repowithgit%.git}
 }
+
+# Merge locally a pull request from GitHub; ammends the commit meessage to include PR number
+function ghpr() {
+	prurl=${1:?"Pull request URL is mandatory"}
+	prno=${prurl##*/}
+	curl -k "$prurl.patch" | git am -3 && git commit --amend -m "$(git show --format=%B HEAD -s)
+
+Closes #${prno}"
+}
