@@ -13,7 +13,7 @@ function gclone() {
 function ghpr() {
 	prurl=${1:?"Pull request URL is mandatory"}
 	prno=${prurl##*/}
-	curl -k "$prurl.patch" | git am -3 && git commit --amend -m "$(git show --format=%B HEAD -s)
+	curl -kL "$prurl.patch" | git am -3 && git commit --amend -m "$(git show --format=%B HEAD -s)
 
 Closes #${prno}"
 }
